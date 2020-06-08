@@ -1,0 +1,336 @@
+@font-face {
+    font-family: 'hindi-text';
+    src : url('../fonts/KrutiDev010.woff');
+}
+
+@font-face {
+    font-family: 'hindi-numbers';
+    src : url('../fonts/BharatVani.woff');
+}
+
+.right-margin{
+    margin-right: 10px;
+}
+
+.auto-margin{
+    margin: auto;
+}
+
+:root{
+    --bus-red: #b34625;
+    --bus-yellow: #eec631;
+    --bus-green: #8eaa53;
+}
+
+.bus {
+    position: relative;
+    padding: 10px;
+}
+
+.bus-top{
+    background: #e8e8e8;
+    border-radius: 10px 10px 0px 0px;
+    padding: 12px;
+}
+
+.bus-label{
+    display: inline-block;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-weight: bold;
+}
+
+.bus-label.black{
+    background: #333;
+    color: #eee;
+    margin-right: 10px;
+}
+
+.bus-label.yellow{
+    font-family: 'hindi-text';
+    background: var(--bus-yellow);
+    color: var(--bus-red);
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+.bus-body-window{
+    padding: 10px;
+    position: relative;
+    background: var(--bus-red);
+}
+
+.window-pane{
+    padding: 10px;
+    background: #eee;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.window-pane:before, .window-pane:after{
+    position: absolute;
+    height: 6px;
+    width: 150%;
+    top: 43px;
+    left: -60px;
+    transform: rotate(-65deg);
+    background-color: #eeeeee;
+    content: "";
+    z-index: 10;
+    opacity: 0.4;
+    animation-name: move-glare;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+}
+
+.window-pane:after{
+    left: -14px;
+    height: 10px;
+    animation-delay: 400ms;
+}
+
+.wiper{
+    position: absolute;
+    width: 30%;
+    height: 2px;
+    background-color: #333;
+    bottom: -3px;
+    right: 30px;
+    transform-origin: left center;
+    transform: rotate(-30deg);
+    animation-name: move-wiper;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    z-index: 30;
+}
+
+.wiper:after{
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background-color: #333;
+    bottom: 0px;
+    transform: rotate(166deg);
+    right: -26px;
+}
+
+.top-glass-pane{
+    background: #cecece;
+    border-radius: 5px;
+    padding: 30px 0;
+}
+
+.bottom-glass-pane{
+    margin-top: 5px;
+    background: #cecece;
+    border-radius: 5px;
+    padding: 15px 0;
+}
+
+.rear-mirror{
+    position: absolute;
+    top: 0;
+    height: 15px;
+    width: 15px;
+    background: transparent;
+    border-color: var(--bus-red);
+    border-style: solid;
+}
+
+.rear-mirror:after {
+    position: absolute;
+    content: "";
+    height: 24px;
+    width: 15px;
+    background: var(--bus-red);
+    border-radius: 5px;
+    top: 5px;
+}
+
+.rear-mirror.left{
+    border-width: 3px 0 0 3px;
+    border-radius: 10px 0 0 0;
+    left: -15px;
+}
+
+.rear-mirror.left:after{
+    left: -9px;
+}
+
+.rear-mirror.right{
+    right: -15px;
+    border-radius: 0 10px 0 0;
+    border-width: 3px 3px 0 0;
+}
+
+.rear-mirror.right:after{
+    right: -9px;
+}
+
+.flashy-bar{
+    padding: 8px 0;
+    background-color: var(--bus-green);
+}
+
+.engine-area{
+    background-color: var(--bus-yellow);
+    padding: 5px 0 50px;
+    position: relative;
+}
+
+.engine-area:before, .engine-area:after{
+    content: "";
+    position: absolute;
+    height: 100px;
+    width: 52%;
+    bottom: 0;
+    background-color: var(--bus-red);
+}
+
+.engine-area:after{
+    border-radius: 80px 0px 0 0;
+    right: 0;
+}
+
+.engine-area:before{
+    border-radius: 0px 80px 0 0;
+    left: 0;
+}
+
+.grill-box{
+    margin-bottom: 15px;
+}
+
+.grill-row{
+    margin-bottom: 5px;
+}
+
+.grill{
+    background-color: #333;
+    padding: 2px 18px;
+    border-radius: 3px;
+    opacity: 0.5;
+    z-index: 20;
+    margin-right: 5px;
+}
+
+.bumper{
+    padding: 8px 0;
+    background: #e8e8e8;
+    position: absolute;
+    bottom: -2px;
+    width: 100%;
+    z-index: 30;
+    border-radius: 0 0 3px 3px;
+}
+
+.wheel{
+    display: inline-block;
+    padding: 17px 18px;
+    background: #333;
+    border-radius: 0 0 5px 5px;
+}
+
+.left.wheel{
+    margin-left: 15px;
+}
+
+.right.wheel{
+    margin-right: 15px;
+}
+
+.lights{
+    position: absolute;
+    width: 100%;
+    bottom: 45px;
+}
+
+.light{
+    height: 15px;
+    width: 15px;
+    border-radius: 100%;
+    background: #eee;
+    z-index: 30;
+    display: inline-block;
+}
+
+.main-lights .light{
+    height: 25px;
+    width: 25px;
+    box-shadow: 0 0 10px 0 var(--bus-yellow);
+    animation-name: blink;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.main-lights .right.light{
+    margin-right: 25px;
+}
+
+.main-lights .left.light{
+    margin-left: 25px;
+}
+
+.indicator-lights .light{
+    opacity: 0.7;
+}
+
+.indicator-lights .right.light{
+    margin-right: 15px;
+}
+
+.indicator-lights .left.light{
+    margin-left: 15px;
+}
+
+.number-plates{
+    position: absolute;
+    width: 100%;
+    bottom: 20px;
+}
+
+.number-plate{
+    display: inline-block;
+    background-color: var(--bus-yellow);
+    color: #333;
+    z-index: 30;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.hindi.number-plate{
+    margin-left: 40px;
+}
+
+.hindi .registration{
+    font-family: 'hindi-text';
+}
+
+.hindi .reg-no{
+    font-family: 'hindi-numbers';
+    line-height: 1.5;
+}
+
+.eng.number-plate{
+    margin-right: 40px;
+}
+
+@keyframes move-wiper{
+    to {transform: rotate(-125deg);}
+}
+
+@keyframes move-glare{
+    from {left: -130px}
+    to {left: 100px}
+}
+
+@keyframes blink{
+    from {box-shadow: 0 0 0px 0 var(--bus-yellow);}
+    to {box-shadow: 0 0 10px 0 var(--bus-yellow);}
+}
