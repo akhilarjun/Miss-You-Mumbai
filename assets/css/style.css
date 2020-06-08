@@ -16,6 +16,16 @@ html{
     font-weight: bold;
 }
 
+@media (max-width: 768px) {
+    .hero h1{
+        font-size: 30px;
+    }
+
+    .hero div{
+        font-size: 15px;
+    }
+}
+
 .hero div{
     font-weight: 100;
     font-size: 20px;
