@@ -1,0 +1,44 @@
+html{
+    background: #cad9e2;
+    font-family: 'Nunito', sans-serif;
+}
+
+.hero{
+    padding: 70px 10px;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    background-color: rgb(4, 15, 22);
+    color: #eee;
+    margin-bottom: 30px;
+}
+
+.grid-cell.with-card{
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.card{
+    border-radius: 2px;
+    max-width: 100%;
+    color: #333;
+    width: 320px;
+    margin: auto;
+}
+
+.card > .card-head{
+    font-weight: 600;
+    text-transform: capitalize;
+    font-size: 18px;
+    padding: 10px 15px;
+    font-size: 20px;
+}
+
+.card > .card-body{
+    font-weight: 100;
+    padding: 10px 15px;
+}
+
+.float-l{
+    float: left;
+}
